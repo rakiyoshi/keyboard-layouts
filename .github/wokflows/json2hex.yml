@@ -1,0 +1,21 @@
+name: 'json2hex'
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'keymaps/**.json'
+
+  pull_request:
+    paths:
+      - 'keymaps/**.json'
+
+jobs:
+  json2c:
+    name: json2c
+    runs-on: qmk/qmk_firmware
+
+  c2hex:
+    name: c2hex
+    runs-on: qmk/qmk_firmware
